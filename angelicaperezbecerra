@@ -1,0 +1,47 @@
+/*
+Registros 
+Pérez Becerra Angélica 
+*/
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+   struct datos{
+      char nombre [60];
+      int edad ;
+      char cuenta [12];
+      char ciudad[20];
+   }persona[20];            
+   
+   int reg;
+
+   puts("¿Cuántos alumnos deseas registrar?:");
+   scanf("%d", &reg);
+   getchar();
+ 
+   int i, numero=0;
+   for (i=0; i<reg; i++) //DATOS DE 3 PERSONAS
+      {
+         puts("DATOS\n");
+         puts("Nombre del alumno:");
+ 	      fflush(stdin);
+ 	      fgets(persona[i].nombre, 60 , stdin);
+         puts("Edad:");
+         scanf("%d", &persona[i].edad);
+         getchar();
+         puts("Número de cuenta:");
+ 	      fflush(stdin);
+ 	      fgets(persona[i].cuenta, 12 , stdin);
+         puts("Ciudad:");
+ 	      fflush(stdin);
+ 	      fgets(persona[i].ciudad, 20 , stdin);
+         puts("*****************************\n");
+      }
+   for (i=0; i<reg; i++) 
+      {
+        printf("Registro:%d\n\tNombre:%s\tEdad:%d\n\tNúmero de cuenta:%s\tCiudad:%s",i+1, persona[i].nombre, persona[i].edad,persona[i].cuenta, persona[i].ciudad);   
+        getchar();   
+   }
+     return 0;
+}
